@@ -52,8 +52,8 @@ function editSpecies($dataSafe123){
   $sql = "UPDATE species SET species_description = :description WHERE species_id = :id";
   $query = $db->prepare($sql);
   $query->execute(array(
-    ':description' => $description,
-    ':id' => $id
+    ':description' => $dataSafe123['description'],
+    ':id' => $dataSafe123['id']
  ));
 
  $db = null;

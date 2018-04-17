@@ -45,7 +45,7 @@
           'id' => $_POST['id']
         	);
 
-          var_dump($dataSafe123);
+          var_dump($_POST);
 
         editSpecies($dataSafe123);
         header("location:" . URL . "species/index" );
