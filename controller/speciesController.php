@@ -30,6 +30,12 @@
       deleteProgres($id);
       header('Location:' . URL . 'species/index');
     }
+//////////////////////////
+
+
+
+
+
 
     // http://localhost/hospital/species/edit/45
     function edit($id){
@@ -51,21 +57,6 @@
         header("location:" . URL . "species/index" );
 
       }
-
-
-    // function editThis($id){
-    //   $data['person']= GetOneBirthday($id);
-    //   // var_dump($data);
-    //   render("calender/edit",$data);
-    //
-    //     // enkele birthday ophalen die stuur ik mee naar edit
-    //     editBirthday($data123);
-    //
-    // }
-
-
-
-
 
 
 

@@ -55,31 +55,6 @@ function editSpecies($dataSafe123){
     ':description' => $dataSafe123['description'],
     ':id' => $dataSafe123['id']
  ));
-
- $db = null;
-
- return true;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  ?>

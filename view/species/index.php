@@ -25,11 +25,11 @@
               echo "<td>" . "<a href='" . URL . "species/edit/" . $species["species_id"] . "'>Edit</a></td>";
               echo "<td>" . "<a href='" . URL . "species/deleteThis/" . $species["species_id"] . "'>Delete</a></td>";
               echo "</tr>";
-       }
+           }
        ?>
     </table>
 
-    <p><a href="<?=URL ?>species/create">Create</a></p>
+    <p><a href="<?=URL?>species/create">Create</a></p>
     <p><a href=<?=URL?> 'species/index'>Home</a></p>
 
 
