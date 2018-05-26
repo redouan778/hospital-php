@@ -1,25 +1,24 @@
 <?php
-
     require(ROOT . "model/speciesModel.php");
 
     function index(){
       echo "Aanroep HospitalController";
-
       $dataspecies =  GetAllSpecies();
       render("species/index", array(
        "dataspecies" => $dataspecies
      ));
     }
 
-
     function create(){
       render("species/create");
     }
+
 
     function createThis(){
       createUpdate($_POST);
       header('Location:' . URL . 'species/index');
     }
+
 
     function delete(){
       render("species/delete");
@@ -27,55 +26,25 @@
 
 
     function deleteThis($id){
-      deleteProgres($id);
+      deleteSpecies($id);
       header('Location:' . URL . 'species/index');
     }
-//////////////////////////
-
-
-
-
 
 
     // http://localhost/hospital/species/edit/45
     function edit($id){
       $dataspecies["species"] = GetOneSpecies($id);
-      // var_dump($dataspecies);
       render("species/edit", $dataspecies);
     }
 
 
     function editSaveThis(){
-        $dataSafe123=array(
-      		'description' => $_POST['description'],
-          'id' => $_POST['id']
-        	);
+      $dataSafe123=array(
+        'description' => $_POST['description'],
+         'id' => $_POST['id']
+    	);
 
-          var_dump($_POST);
-
-        editSpecies($dataSafe123);
-        header("location:" . URL . "species/index" );
-
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      editSpecies($dataSafe123);
+      header("location:" . URL . "species/index" );
+    }
 ?>
