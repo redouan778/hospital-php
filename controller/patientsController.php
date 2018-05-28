@@ -40,8 +40,7 @@ function createSave(){
 function editRoute($id){
   $data['patients']= GetOnePatient($id);
 
-  render('patients/editP', $data ,
- array(
+  render('patients/editP', array(
     'dataspecies' => GetAllSpecies(),
     'dataclients' => GetAllClients(),
     'patients' => GetOnePatient($id)
