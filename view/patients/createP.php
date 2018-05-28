@@ -1,18 +1,28 @@
-<div>
-  <form action="<?= URL ?>patients/createP" method="POST">
-    <label class="title" for="fname">patient_name</label>
-    <input type="text" name="patient_name" placeholder="patient_name">
+<div class="container">
+	<h1>Create PPPPPP</h1>
+	<form action="<?= URL ?>patients/createSave" method="post">
 
-    	<select name="species_id">
-      <?
-        foreach ($species as $specie) {?>
-          <option value="<? $specie['species_id'] ?>"><? $specie['species_description']?></option>        }
-      <?}?>
-    </select>
+		<p><input type="text" name="patient_name" placeholder="Patient name"></p>
 
-    <label class="title" for="fname">patient_status</label>
-    <input type="text" name="patient_status" placeholder="patient_status">
+		<p><select name="species_id">
+			<?php foreach ($dataspecies as $specie) { ?>
 
-    <input id="button" type="submit" value="Versturen">
-  </form>
+				<option value="<?= $specie['species_id'] ?>"> <?= $specie['species_description'] ?></option>
+			<?php } ?>
+		</select></p>
+
+		<p><input type="text" name="patient_status" placeholder="Patient status"></p>
+
+		<p><select name="client_id">
+			<?php foreach ($dataclients as $clients) { ?>
+				<option value="<?= $clients['client_id'] ?>"><?= $clients['client_firstname'] . " " . $clients['client_lastname'] ?></option>
+				<? var_dump($client);?>
+			<?php } ?>
+		</select></p>
+
+
+		<input type="submit" value="Verzenden">
+
+	</form>
+
 </div>

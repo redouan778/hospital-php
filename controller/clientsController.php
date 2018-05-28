@@ -22,7 +22,7 @@
       );
     createThis($createSave);
     header('Location:' . URL . 'clients/index');
-  }
+}
 
   function deleteThis($id){
     deleteProgres($id);
