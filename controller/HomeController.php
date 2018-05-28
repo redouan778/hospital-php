@@ -2,5 +2,5 @@
 
 function index()
 {
-	render("species/index");
+	render("patients/index");
 }

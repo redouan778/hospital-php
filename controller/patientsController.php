@@ -5,6 +5,7 @@
 
 
   function index(){
+    echo "Aanroep HospitalController";
     $datapatients =  GetAllPatients();
     render("patients/indexP", array(
      "datapatients" => $datapatients
@@ -16,9 +17,9 @@ function createP()
 {
 	render("patients/createP", array(
 		'dataspecies' => GetAllSpecies(),
-    'dataspecies' => GetAllPatients(),
 		'dataclients' => GetAllClients()
 	));
+  // var_dump(GetAllSpecies());
 }
 
 
@@ -39,10 +40,11 @@ function createSave(){
 function editRoute($id){
   $data['patients']= GetOnePatient($id);
 
-  render('patients/editP', array(
+  render('patients/editP', $data ,
+ array(
     'dataspecies' => GetAllSpecies(),
     'dataclients' => GetAllClients(),
-    'onepatients' => GetOnePatient($id)
+    'patients' => GetOnePatient($id)
   ));
 }
 

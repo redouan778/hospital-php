@@ -21,8 +21,7 @@
      LEFT JOIN clients ON patients.client_id = clients.client_id
      LEFT JOIN species on patients.species_id = species.species_id
 
-     ORDER BY patient_name
-     ";
+     ORDER BY patient_name";
 
     $query = $db->prepare($sql);
     $query->execute();
@@ -79,18 +78,28 @@ function createFunc($createPatient)
   }
 
   function editPatient($data){
-    $db = openDatabaseConnection();
-
     $patient_name = ($data['patient_name']);
+  	$species_id = ($data['species_id']);
   	$patient_status = ($data['patient_status']);
-    $patient_id = ($data['patient_id']);
+  	$client_id = ($data['client_id']);
+  	$id = ($data['id']);
 
-    $sql = "UPDATE patients SET  = :patient_name, patient_status = :patient_status WHERE patient_id = :id";
-    $query = $db->prepare($sql);
-    $query->bindParam(':patient_name', $data['patient_name']);
-    $query->bindParam(':patient_status', $data['patient_status']);
-    $query->bindParam(':id', $data['id']);
-    $query->execute();
+  	if (strlen($patient_name) == 0 || strlen($species_id) == 0 || strlen($patient_status) == 0 || strlen($client_id) == 0 || strlen($id) == 0) {
+  		return false;
+  	}
+
+  	$db = openDatabaseConnection();
+  	$sql = "UPDATE patients SET patient_name = :patient_name, species_id = :species_id, patient_status = :patient_status, client_id = :client_id  WHERE patient_id = :id";
+  	$query = $db->prepare($sql);
+  	$query->execute(array(
+  		':patient_name' => $patient_name,
+  		':species_id' => $species_id,
+  		':patient_status' => $patient_status,
+  		':client_id' => $client_id,
+  		':id' => $id));
+  	$db = null;
+
+  	return true;
   }
 
 
