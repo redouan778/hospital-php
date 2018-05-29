@@ -39,22 +39,26 @@ function createSave(){
 
 function editRoute($id){
   $data['patients']= GetOnePatient($id);
+  $data['dataspecies']=GetAllSpecies();
+  $data['dataclients']=GetAllClients();
 
-  render('patients/editP', array(
-    'dataspecies' => GetAllSpecies(),
-    'dataclients' => GetAllClients(),
-    'patients' => GetOnePatient($id)
-  ));
+  render('patients/editP',$data);
 }
 
 function editConfirm(){
-  $data=array(
+  echo "editConfirm";
+  // var_dump($_POST);
+
+  $dataP=array(
     'patient_name' => $_POST['patient_name'],
+    // 'species_id' => $_POST['species_id'],
     'patient_status' => $_POST['patient_status'],
+    // 'client_id' => $_POST['client_id'],
     'patient_id'   => $_POST["patient_id"]
   );
-  editPatient($data);
-  header("Location:" . URL . "Patients/index");
+  // var_dump($dataP);
+  editPatient($dataP);
+ header("Location:" . URL . "Patients/index");
 }
 
 function deletePatient($id){
