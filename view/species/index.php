@@ -21,31 +21,3 @@
     <p><a href="<?=URL?>species/create">Create</a></p>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <p>hoiii alles goed vandaag?</p>
-
-
-  </body>
-</html> -->

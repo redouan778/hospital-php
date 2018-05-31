@@ -39,16 +39,11 @@
       return $query->fetch();
   }
 
-function createFunc($createPatient)
-  {
+  function createFunc($createPatient){
   	$patient_name = ($createPatient['patient_name']);
   	$species_id = ($createPatient['species_id']);
   	$patient_status = ($createPatient['patient_status']);
   	$client_id = ($createPatient['client_id']);
-
-  	if (strlen($patient_name) == 0 || strlen($species_id) == 0 || strlen($patient_status) == 0 || strlen($client_id) == 0) {
-  		return false;
-  	}
 
   	$db = openDatabaseConnection();
 
@@ -78,8 +73,6 @@ function createFunc($createPatient)
   }
 
   function editPatient($dataP){
-
-
   	$db = openDatabaseConnection();
   	$sql = "UPDATE patients SET patient_name = :patient_name, patient_status = :patient_status, species_id= :species_id, client_id = :client_id  WHERE patient_id = :patient_id";
   	$query = $db->prepare($sql);
@@ -94,22 +87,4 @@ function createFunc($createPatient)
 
   	return true;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

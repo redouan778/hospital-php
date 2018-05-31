@@ -6,5 +6,3 @@
     <input id="button" type="submit" value="Versturen">
   </form>
 </div>
-
-<? var_dump($species);

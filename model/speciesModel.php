@@ -1,7 +1,6 @@
 <?php
 
   function GetAllSpecies(){
-    // echo "GetAllClients()";
     $db = openDatabaseConnection();
     $sql = "SELECT * FROM species";
     $query = $db->prepare($sql);
@@ -49,5 +48,5 @@
    ));
   }
 
-  
+
 ?>

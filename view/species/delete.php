@@ -1,8 +1,3 @@
-<?php
-  echo "hello";
-  var_dump($species["species_description"]);
- ?>
-
 <div class="">
   <form action="<?= URL ?>species/deleteThis" method="POST">
     <label class="title" value= "<?php  $dataspecies["species_description"] ?>" for="fname">Naam</label>

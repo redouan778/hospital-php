@@ -1,6 +1,5 @@
 <?php
 function GetAllClients(){
-  // echo "GetAllClients()";
   $db = openDatabaseConnection();
   $sql = "SELECT * FROM clients";
   $query = $db->prepare($sql);

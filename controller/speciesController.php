@@ -31,7 +31,6 @@
     }
 
 
-    // http://localhost/hospital/species/edit/45
     function edit($id){
       $dataspecies["species"] = GetOneSpecies($id);
       render("species/edit", $dataspecies);
@@ -41,7 +40,7 @@
     function editSaveThis(){
       $dataSafe123=array(
         'description' => $_POST['description'],
-         'id' => $_POST['id']
+        'id' => $_POST['id']
     	);
 
       editSpecies($dataSafe123);
