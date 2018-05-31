@@ -47,16 +47,17 @@ function editRoute($id){
 
 function editConfirm(){
   echo "editConfirm";
-  // var_dump($_POST);
 
   $dataP=array(
     'patient_name' => $_POST['patient_name'],
-    // 'species_id' => $_POST['species_id'],
+    'species_id' => $_POST['species_id'],
     'patient_status' => $_POST['patient_status'],
-    // 'client_id' => $_POST['client_id'],
-    'patient_id'   => $_POST["patient_id"]
+    'client_id' => $_POST['client_id'],
+    'patient_id'   => $_POST["patient_id"],
   );
   // var_dump($dataP);
+  // var_dump($dataP['species_id']);
+
   editPatient($dataP);
  header("Location:" . URL . "Patients/index");
 }

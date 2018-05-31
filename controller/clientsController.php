@@ -2,7 +2,6 @@
   require(ROOT . "model/clientsModel.php");
 
   function index(){
-    echo "Aanroep HospitalController";
     $dataclients =  GetAllClients();
     render("clients/indexC", array(
      "dataclients" => $dataclients
@@ -38,9 +37,7 @@
   function editSaveThis(){
     $save=array(
     'firstname' => $_POST['firstname'],
-    'lastname' => $_POST['lastname'],
-    'phone' => $_POST['phone'],
-    'mail' => $_POST['mail'],
+     'mail' => $_POST['mail'],
     'id' => $_POST['id']
     );
 

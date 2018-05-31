@@ -78,17 +78,15 @@ function createFunc($createPatient)
   }
 
   function editPatient($dataP){
-    // if (strlen($patient_name) == 0 || strlen($species_id) == 0 || strlen($patient_status) == 0 || strlen($client_id) == 0 || strlen($id) == 0) {
-  	// 	return false;
-  	// }
+
 
   	$db = openDatabaseConnection();
-  	$sql = "UPDATE patients SET patient_name = :patient_name, patient_status = :patient_status  WHERE patient_id = :patient_id";
+  	$sql = "UPDATE patients SET patient_name = :patient_name, patient_status = :patient_status, species_id= :species_id, client_id = :client_id  WHERE patient_id = :patient_id";
   	$query = $db->prepare($sql);
     $query->bindParam(':patient_name' ,$dataP['patient_name']);
-    // $query->bindParam(':species_id', $dataP['species_id']);
+    $query->bindParam(':species_id', $dataP['species_id']);
     $query->bindParam(':patient_status', $dataP['patient_status']);
-    // $query->bindParam(':client_id', $dataP['client_id']);
+    $query->bindParam(':client_id', $dataP['client_id']);
     $query->bindParam(':patient_id', $dataP['patient_id']);
 
   	$query->execute();
